@@ -1,3 +1,4 @@
 const User = require('./User');
+const Clipboard = require('./Clipboard');
 
-module.exports = { User };
+module.exports = { Clipboard, User };

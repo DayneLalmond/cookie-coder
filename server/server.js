@@ -1,6 +1,9 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
+//here
+const { authMiddleware } = require('./utils/auth');
+
 
 // require the type defs and resolvers of the schema to setup queries
 const { typeDefs, resolvers } = require('./schemas');
@@ -12,6 +15,7 @@ const app = express();
 const server = new ApolloServer({
     typeDefs,
     resolvers,
+    context: authMiddleware,
 });
 
 app.use(express.urlencoded({ extended: false }));
