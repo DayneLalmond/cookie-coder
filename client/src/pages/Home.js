@@ -1,12 +1,17 @@
 import React from "react";
-import footer from "../images/GitHub.png";
+import Footer from "../images/footer.png";
 import Accordion from "../components/Accordion";
+import HomeHeader from "../images/homeBlue.png";
 import { Donate } from "../components/Donate";
 
 
 const Home = () => {
   return (
     <main>
+      <div>
+      <img src={HomeHeader} className="App-logo" alt="logo" height="100px"/>
+      </div>
+    
       <div>
         <Accordion />
       </div>
@@ -16,7 +21,7 @@ const Home = () => {
       </div>
 
       <div>
-        <img src={footer} className="App-logo" alt="logo" width="100%" />
+        <img src={Footer} className="App-logo" alt="logo" width="100%" />
       </div>
     </main>
   );

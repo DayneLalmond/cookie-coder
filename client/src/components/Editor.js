@@ -3,7 +3,7 @@ import CodeEditor from "@uiw/react-textarea-code-editor";
 export function Editor() {
   const [code, setCode] = useState(`function add(a, b) {\n  return a + b;\n}`);
   return (
-    <CodeEditor
+       <CodeEditor
       value={code}
       language="js"
       placeholder="Please enter JS code."

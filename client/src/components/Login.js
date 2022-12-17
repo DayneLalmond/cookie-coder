@@ -1,11 +1,11 @@
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/esm/Container';
 import Form from 'react-bootstrap/Form';
-import loginImage from "../images/loginImage.png";
+import LoginHeader from "../images/login-header.png";
 export function LoginForm() {
   return (
     <Container>
-      <img src={loginImage} className="App-logo" alt="logo" height="100px"/>
+      <img src={LoginHeader} className="App-logo" alt="logo" height="100px"/>
       <Form>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
