@@ -1,13 +1,12 @@
 import React from 'react';
-
+import { Editor } from "../components/Editor";
 const Profile = () => {
 
   return (
-    <div>
-      <div>
-        <h4>Profile</h4>
-      </div>
+   <div>
+        <Editor />
     </div>
+    
   );
 };
 

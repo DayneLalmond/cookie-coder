@@ -1,14 +1,22 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import footer from "../images/GitHub.png";
+import Accordion from "../components/Accordion";
+import { Donate } from "../components/Donate";
+
 
 const Home = () => {
-
   return (
     <main>
       <div>
-        <h1>Home</h1>
-        <Link to="/login">Login</Link>
-        <Link to="/signup">Signup</Link>
+        <Accordion />
+      </div>
+
+      <div>
+        <Donate />
+      </div>
+
+      <div>
+        <img src={footer} className="App-logo" alt="logo" width="100%" />
       </div>
     </main>
   );
