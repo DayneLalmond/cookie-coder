@@ -1,3 +1,8 @@
 * {
     scroll-behavior: smooth;
   }
+
+.navFix {
+  position: fixed;
+  font-weight: bold;
+}  
