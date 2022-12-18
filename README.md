@@ -20,7 +20,7 @@ User Story:
 * AS A full stack web developer in need of code snippets storage
 * I WANT a simple app that retains my useful snippets
 * So THAT I can complete my projects effectively
-* Given the need for coding efficiently
+* Given the need for coding efficiency 
 
 [Back to Top](#CookieCoder)
 
@@ -60,10 +60,10 @@ User Story:
 
 # Usage
 
-CookieCoder is a convenient app to store your most useful code snippets. You'll be able to copy tried and true snippets with ease and efficiency!
+CookieCoder is a convenient app to store your most useful code snippets. You'll be able to copy tried and true snippets with ease and efficiency to any project!
 
 Screenshots:
-![screenshot](.png)
+![screenshot](old-computer.png)
 ![screenshot](.png)
 ![screenshot](.png)
 
