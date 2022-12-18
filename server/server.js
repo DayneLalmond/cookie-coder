@@ -1,6 +1,8 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
+const { authMiddleware } = require('./utils/auth');
+
 
 // require the type defs and resolvers of the schema to setup queries
 const { typeDefs, resolvers } = require('./schemas');
@@ -12,12 +14,13 @@ const app = express();
 const server = new ApolloServer({
     typeDefs,
     resolvers,
+    context: authMiddleware,
 });
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-if (process.envNODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/build')))
 }
 // send the build html on initial parameter request

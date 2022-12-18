@@ -1,17 +1,22 @@
 import React from 'react';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
-import Style from './styles/index';
+import { MockUp } from './pages/MockUp';
 
-const client = new ApolloClient({
-    uri: '/graphql',
-    cache: new InMemoryCache(),
-});
+function App() {
+  return (
+      <Router>
+        <div>
+          <div>
+            <Routes>
+              <Route path="/" element={<Home />}/>
+              <Route path="/MockUp" element={<MockUp/>}/>
+            </Routes>
+          </div>
+        </div>
+      </Router>
+  );
+}
 
-// function App() {
-//     return (
-
-//     );
-// }
+export default App;
