@@ -11,6 +11,9 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Clipboard from './pages/Clipboard';
+import Dashboard from './components/Dashboard';
+import NavBar from "./components/NavClipboard"
+import PageFooter from "./components/Footer"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Nav from './components/Nav';
@@ -44,15 +47,17 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <Nav></Nav>
+          <NavBar></NavBar>
           <div>
             <Routes>
               <Route path="/" element={<Home />}/>
               <Route path="/login" element={<Login />}/>
               <Route path="/signup" element={<Signup />}/>
               <Route path="/clipboard" element={<Clipboard />}/>
+              <Route path="/dashboard" element={<Dashboard />}/>
             </Routes>
           </div>
+          <PageFooter></PageFooter>
         </div>
       </Router>
     </ApolloProvider>

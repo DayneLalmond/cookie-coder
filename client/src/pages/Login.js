@@ -1,3 +1,8 @@
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/esm/Container';
+import Form from 'react-bootstrap/Form';
+import LoginHeader from "../images/login-header.png";
+
 import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
@@ -42,52 +47,57 @@ const Login = (props) => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Login</h4>
-          <div className="card-body">
+  <Container>
+
             {data ? (
-              <p>
+              <Form.Text>
                 Success!
-              </p>
+              </Form.Text>
             ) : (
-              <form onSubmit={handleFormSubmit}>
-                <input
-                  className="form-input"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
-                <button
-                  className="btn btn-block btn-success"
-                  style={{ cursor: 'pointer' }}
-                  type="submit"
-                >
-                  Submit
-                </button>
-              </form>
+              <Form onSubmit={handleFormSubmit}>
+                <img src={LoginHeader} className="App-logo" alt="logo" height="100px"/>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label                   
+                        value={formState.email}
+                        onChange={handleChange}>
+                        Email address
+                  </Form.Label>
+                  <Form.Control type="email" placeholder="Enter email" />
+                  <Form.Text className="text-muted">
+                    We'll never share your email with anyone else.
+                  </Form.Text>
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Label
+                      value={formState.password}
+                      onChange={handleChange}>
+                      Password
+                  </Form.Label>
+                   <Form.Control type="password" placeholder="Password" />
+                </Form.Group>
+ 
+
+                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                  <Form.Check type="checkbox" label="Check me out" />
+                </Form.Group>
+
+                <Button variant="primary" type="submit">
+                    Open Sesame
+                </Button>
+              </Form>
+              
+            
             )}
 
             {error && (
-              <div className="my-3 p-3 bg-danger text-white">
+              <Form.Text>
                 {error.message}
-              </div>
+              </Form.Text>
+               
             )}
-          </div>
-        </div>
-      </div>
-    </main>
+       </Container>
+  
   );
 }
 
