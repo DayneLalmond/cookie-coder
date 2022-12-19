@@ -18,7 +18,7 @@ export default function Clipboard() {
     if (topic.length <= 10) {
       setFormErr('Topic needs to be longer')
     } else {
-      setFormErr(null)
+      setFormErr('Saved Clipboard')
     }
     // notice user about condition
 
@@ -28,7 +28,7 @@ export default function Clipboard() {
         topic,
       }
     })
-    console.log(response)
+    
   }
 
   return (

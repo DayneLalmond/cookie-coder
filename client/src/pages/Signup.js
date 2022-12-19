@@ -19,7 +19,7 @@ const Signup = () => {
     password: '',
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
-console.log(data)
+  console.log(data)
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -46,66 +46,66 @@ console.log(data)
   };
 
   return (
-<Container>
+    <Container>
 
-            {error ? (
-              <Form.Text>
-                Success!
-              </Form.Text>
-            ) : (
-          <Form onSubmit={handleFormSubmit}>
- 
+      {error ? (
+        <Form.Text>
+          Invalid
+        </Form.Text>
+      ) : (
+        <Form onSubmit={handleFormSubmit}>
+
           {/* Form for EmailAdress */}
-              <Form.Group className="mb-3">
-                <Form.Label>
-                  Username
-                </Form.Label>
-                <Form.Control
-                name="username" 
-                type="text"
-                value={formState.username} 
-                onChange={handleChange} 
-                placeholder="John Dough" />
-              </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>
+              Username
+            </Form.Label>
+            <Form.Control
+              name="username"
+              type="text"
+              value={formState.username}
+              onChange={handleChange}
+              placeholder="John Dough" />
+          </Form.Group>
 
-              <Form.Group  className="mb-3" controlId="formBasicEmail">
-                <Form.Label>
-                  Email address
-                </Form.Label>
-                <Form.Control
-                name="email" 
-                type="email"
-                value={formState.email}
-                onChange={handleChange}
-                placeholder="johndough@cookiejar.com" />
-              </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>
+              Email address
+            </Form.Label>
+            <Form.Control
+              name="email"
+              type="email"
+              value={formState.email}
+              onChange={handleChange}
+              placeholder="johndough@cookiejar.com" />
+          </Form.Group>
 
           {/* From For Password */}
-              <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>
-                  Password
-                </Form.Label>
-                <Form.Control
-                name="password" 
-                type="password"
-                value={formState.password}
-                onChange={handleChange}
-                placeholder="Secret Recipe" />
-              </Form.Group>
-              
-              <Button variant="primary" type="submit">
-                Signup
-              </Button>
-            </Form>
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label>
+              Password
+            </Form.Label>
+            <Form.Control
+              name="password"
+              type="password"
+              value={formState.password}
+              onChange={handleChange}
+              placeholder="Secret Recipe" />
+          </Form.Group>
 
-            )}
+          <Button variant="primary" type="submit">
+            Signup
+          </Button>
+        </Form>
 
-            {error && (
-              <Form.Text className="my-3 p-3 bg-danger text-white">
-                {error.message}
-              </Form.Text>
-            )}
-</Container>
+      )}
+
+      {error && (
+        <Form.Text className="my-3 p-3 bg-danger text-white">
+          {error.message}
+        </Form.Text>
+      )}
+    </Container>
 
   );
 };

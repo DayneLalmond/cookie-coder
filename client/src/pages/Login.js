@@ -1,8 +1,10 @@
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/esm/Container';
 import Form from 'react-bootstrap/Form';
+import { Link } from 'react-router-dom';
 import Clipboard from './Clipboard';
 import Navbar from '../components/Nav';
+
 
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
@@ -10,6 +12,7 @@ import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
+import Dashboard from '../components/Dashboard';
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -45,11 +48,13 @@ const Login = (props) => {
       email: '',
       password: '',
     });
+    
+    // window.location.reload(false);
+    // ReactDOM.render(<Clipboard />, document.getElementById('check'));
+};
 
-    ReactDOM.render(<Clipboard />, document.getElementById('check'));
-    window.location.reload(false);
-  };
 
+  
   return (
     <Container>
       {data ? (
@@ -83,9 +88,10 @@ const Login = (props) => {
           </Form.Group>
 
 
-          <Button variant="primary" type="submit" to={Clipboard}>
+          <Button variant="primary" type="submit">
             Login
           </Button>
+          {/* <Link type="submit" to="/Clipboard">Login</Link> */}
 
         </Form>
       )}
@@ -97,7 +103,6 @@ const Login = (props) => {
 
       )}
     </Container>
-
   );
 }
 export default Login;

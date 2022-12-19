@@ -13,7 +13,8 @@
 
 .clipboardarea {
   margin: 0 auto;
-  width: 55%;
+  margin-bottom: 20px;
+  width: 60%;
   height: 20vh;
   border: 2px solid #ccc;
   border-radius: 4px;
@@ -22,8 +23,13 @@
 
 textarea {
   resize: none;
+  margin-bottom: 20px;
 }
 
 form {
   width: 20%;
+}
+
+a {
+  margin-left: 20px;
 }

@@ -1,9 +1,9 @@
 import React from "react";
 import background from '../images/bg21.png';
-import Navbar from '../components/Nav';
+import Navbar from '../components/NavClipboard';
 import Clipboard from './Clipboard';
-import Login from "./Login"
-import Signup from "./Signup"
+import Login from "./Login";
+import Signup from "./Signup";
 
 
 const Home = () => {
@@ -16,9 +16,6 @@ const Home = () => {
       <div>
         <img src={background} alt="cookie coder background" width="100%" />
         <Clipboard></Clipboard>
-        {/* <Login /> */}
-
-        {/* <Signup /> */}
       </div>
       <div id="check">
 
