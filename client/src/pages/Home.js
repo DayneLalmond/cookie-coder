@@ -1,5 +1,7 @@
 import React from "react";
-import background from '../images/bgTransp.png';
+import background from '../images/bg21.png';
+import Navbar from '../components/Nav';
+import Clipboard from './Clipboard';
 import Login from "./Login"
 import Signup from "./Signup"
 
@@ -10,12 +12,16 @@ const Home = () => {
   //https://stackoverflow.com/questions/51412139/how-do-you-swap-out-a-component-in-react
   return (
     <main>
-      <div>      
-        <img src={background} alt="cookie coder background" width="100%"/>
+      <Navbar></Navbar>
+      <div>
+        <img src={background} alt="cookie coder background" width="100%" />
+        <Clipboard></Clipboard>
+        {/* <Login /> */}
 
-        <Login />
-        
-        <Signup />
+        {/* <Signup /> */}
+      </div>
+      <div id="check">
+
       </div>
     </main>
   );

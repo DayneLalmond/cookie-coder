@@ -2,21 +2,59 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-function BasicExample() {
+import React from 'react';
+
+// TODO: Add a comment explaining how we are able to extract the key value pairs from props
+
+function NavTabs({ currentPage, handlePageChange }) {
   return (
-    <Navbar bg="light" expand="lg">
-      <Container>
-        <Navbar.Brand href="#home">Cookie Coder</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="Clipboard">Clipboard</Nav.Link>
-            <Nav.Link href="Home">Sign Out</Nav.Link>
-            </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <ul className="nav nav-tabs">
+      <li className="nav-item">
+        <a
+          href="#home"
+          onClick={() => handlePageChange('Home')}
+          //*  TODO: BONUS: Add a comment explaining what kind of operator this is and what it is checking for
+
+          className={currentPage === 'Home' ? 'nav-link active' : 'nav-link'}
+        >
+          Home
+        </a>
+      </li>
+      <li className="nav-item">
+        <a
+          href="#about"
+          onClick={() => handlePageChange('About')}
+          //  TODO: Add a comment explaining what this logic is doing
+
+          className={currentPage === 'About' ? 'nav-link active' : 'nav-link'}
+        >
+          About
+        </a>
+      </li>
+      <li className="nav-item">
+        <a
+          href="#blog"
+          onClick={() => handlePageChange('Blog')}
+          //  TODO: Add a comment explaining what this logic is doing
+
+          className={currentPage === 'Blog' ? 'nav-link active' : 'nav-link'}
+        >
+          Blog
+        </a>
+      </li>
+      <li className="nav-item">
+        <a
+          href="#contact"
+          //  TODO: Add a comment explaining what this logic is doing
+
+          onClick={() => handlePageChange('Contact')}
+          className={currentPage === 'Contact' ? 'nav-link active' : 'nav-link'}
+        >
+          Contact
+        </a>
+      </li>
+    </ul>
   );
 }
 
-export default BasicExample;
+export default NavTabs;

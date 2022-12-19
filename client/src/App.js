@@ -12,11 +12,9 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Clipboard from './pages/Clipboard';
 import Dashboard from './components/Dashboard';
-import NavBar from "./components/NavClipboard"
+import Navbar from "./components/NavClipboard"
 import PageFooter from "./components/Footer"
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import Nav from './components/Nav';
 
 // construct main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -47,7 +45,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <NavBar></NavBar>
+          <Navbar></Navbar>
           <div>
             <Routes>
               <Route path="/" element={<Home />}/>
@@ -57,7 +55,6 @@ function App() {
               <Route path="/dashboard" element={<Dashboard />}/>
             </Routes>
           </div>
-          <PageFooter></PageFooter>
         </div>
       </Router>
     </ApolloProvider>

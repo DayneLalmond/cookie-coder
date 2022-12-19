@@ -1,5 +1,4 @@
 import Button from 'react-bootstrap/Button';
-import SignUpHeader from "../images/signup-header.png";
 import Container from 'react-bootstrap/esm/Container';
 import Form from 'react-bootstrap/Form';
 
@@ -24,7 +23,6 @@ console.log(data)
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-
 
     setFormState({
       ...formState,
@@ -56,55 +54,47 @@ console.log(data)
               </Form.Text>
             ) : (
           <Form onSubmit={handleFormSubmit}>
-             <img src={SignUpHeader} className="Signup" alt="logo" height="100px"/>
  
           {/* Form for EmailAdress */}
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label                  
-                  placeholder="Your username"
-                  name="username"
-                  type="text"
-                  value={formState.name}
-                  onChange={handleChange}>Email address
+              <Form.Group className="mb-3">
+                <Form.Label>
+                  Username
                 </Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
-                <Form.Text className="text-muted">
-                  We'll never share your email with anyone else.
-                </Form.Text>
+                <Form.Control
+                name="username" 
+                type="text"
+                value={formState.username} 
+                onChange={handleChange} 
+                placeholder="John Dough" />
               </Form.Group>
 
               <Form.Group  className="mb-3" controlId="formBasicEmail">
-                <Form.Label                  
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}>Email address
+                <Form.Label>
+                  Email address
                 </Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
-                <Form.Text className="text-muted">
-                  We'll never share your email with anyone else.
-                </Form.Text>
+                <Form.Control
+                name="email" 
+                type="email"
+                value={formState.email}
+                onChange={handleChange}
+                placeholder="johndough@cookiejar.com" />
               </Form.Group>
 
           {/* From For Password */}
               <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label
-                   name="password"
-                   type="password"
-                   value={formState.password}
-                   onChange={handleChange}>
+                <Form.Label>
                   Password
                 </Form.Label>
-                <Form.Control type="password" placeholder="Password" />
+                <Form.Control
+                name="password" 
+                type="password"
+                value={formState.password}
+                onChange={handleChange}
+                placeholder="Secret Recipe" />
               </Form.Group>
-
-              <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Check me out" />
-              </Form.Group>
-
+              
               <Button variant="primary" type="submit">
-                Let's Go!
+                Signup
               </Button>
             </Form>
 

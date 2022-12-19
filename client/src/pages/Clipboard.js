@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import CodeEditor from '@uiw/react-textarea-code-editor';
 import { ADD_CLIPBOARD } from '../utils/mutations';
+import '../styles/index.css';
 
 export default function Clipboard() {
 
@@ -30,26 +31,25 @@ export default function Clipboard() {
     console.log(response)
   }
 
-
   return (
-    <div>
- 
+    <div className="clipboard">
       <div>
-        <h4>Profile</h4>
+        <h4>New Clipboard</h4>
       </div>
       <CodeEditor
         value={code}
         language="js"
+        className="clipboardarea"
         placeholder="Please enter JS code."
         onChange={(evn) => setCode(evn.target.value)}
-        padding={15}
+        padding={10}
         style={{
           fontSize: 12,
           backgroundColor: "#f5f5f5",
           fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
         }}/>
 
-      <textarea value={topic} onChange={(evn) => setTopic(evn.target.value)}></textarea>
+      <textarea value={topic} onChange={(evn) => setTopic(evn.target.value)} rows="4" cols="100"></textarea>
       <button onClick={HandleButtonClick}>Save</button>
       {formErr && <p>{formErr}</p>}
     </div>
