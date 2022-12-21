@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import CodeEditor from '@uiw/react-textarea-code-editor';
 import { ADD_CLIPBOARD } from '../utils/mutations';
+import NavDash from '../components/NavDash';
 import '../styles/index.css';
 
 export default function Clipboard() {
@@ -33,6 +34,7 @@ export default function Clipboard() {
 
   return (
     <div className="clipboard">
+      <NavDash></NavDash>
       <div>
         <h4>New Clipboard</h4>
       </div>

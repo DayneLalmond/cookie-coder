@@ -13,8 +13,7 @@ function BasicExample() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Signup</Link>
+
             </Nav>
           </Navbar.Collapse>
         </Container>

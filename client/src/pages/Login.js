@@ -48,9 +48,10 @@ const Login = (props) => {
       email: '',
       password: '',
     });
-    
-    // window.location.reload(false);
-    // ReactDOM.render(<Clipboard />, document.getElementById('check'));
+
+
+    // switch to the clipboard page
+    window.location = '/Clipboard';
 };
 
 

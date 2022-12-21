@@ -15,7 +15,6 @@ const Home = () => {
       <Navbar></Navbar>
       <div>
         <img src={background} alt="cookie coder background" width="100%" />
-        <Clipboard></Clipboard>
       </div>
       <div id="check">
 
